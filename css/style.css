@@ -1,0 +1,400 @@
+/* =========================================
+   1. BAREVNÉ PROMĚNNÉ A ZÁKLAD
+   ========================================= */
+:root {
+  --pozadi: #f4f6f5;
+  --bila: #ffffff;
+  --tmava: #1b2124;
+  --seda: #5a666a;
+  --cara: #d3dad8;
+  --zluta: #ffc928;
+  --modra: #2457e6;
+  --zelena: #1a7a3c;
+  --cervena: #b3261e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--pozadi);
+  color: var(--tmava);
+  font-family: "Archivo", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Centrovaný obal obsahu na všech stránkách */
+.wrap {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 50px 0;
+}
+
+/* =========================================
+   2. NADPISY, TEXTY A TLAČÍTKA
+   ========================================= */
+h1, h2, h3 {
+  font-family: "Archivo Black", Impact, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+}
+
+h1 { font-size: 42px; }
+h2 { font-size: 28px; }
+h3 { font-size: 20px; }
+
+p {
+  margin: 0 0 15px 0;
+  max-width: 65ch;
+}
+
+a {
+  color: var(--modra);
+}
+
+.page-title {
+  padding: 50px 0 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--modra);
+  color: var(--bila);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn.alt {
+  background-color: transparent;
+  color: var(--tmava);
+  border: 2px solid var(--tmava);
+  margin-left: 8px;
+}
+
+/* =========================================
+   3. HLAVIČKA A NAVIGACE
+   ========================================= */
+.site-header {
+  background-color: var(--tmava);
+  color: var(--bila);
+  border-bottom: 4px solid var(--zluta);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-family: "Archivo Black", Impact, sans-serif;
+  color: var(--bila);
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.logo span {
+  background-color: var(--zluta);
+  color: var(--tmava);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-right: 4px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--bila);
+  color: var(--bila);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  color: var(--bila);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: block;
+}
+
+.site-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.site-nav a[aria-current="page"] {
+  background-color: var(--zluta);
+  color: var(--tmava);
+  font-weight: 700;
+}
+
+/* =========================================
+   4. ÚVODNÍ HERO SEKCE (index.html)
+   ========================================= */
+.hero {
+  background-color: var(--bila);
+  border-bottom: 1px solid var(--cara);
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero h1 mark {
+  background-color: var(--zluta);
+  padding: 0 6px;
+  border-radius: 6px;
+}
+
+.hero .lead {
+  font-size: 20px;
+  color: var(--seda);
+}
+
+/* Zjednodušená ilustrace stěny */
+.wall {
+  height: 320px;
+  background-color: #3a4448;
+  border: 6px solid var(--tmava);
+  border-radius: 16px;
+  position: relative;
+}
+
+.wall::after {
+  content: "Fontainebleau 6A";
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background-color: var(--zluta);
+  color: var(--tmava);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* =========================================
+   5. KARTY A TMAVÝ PRUH
+   ========================================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--bila);
+  border-top: 5px solid var(--zluta);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card:nth-child(even) {
+  border-top-color: var(--modra);
+}
+
+.card p {
+  margin: 0;
+  color: var(--seda);
+}
+
+.band {
+  background-color: var(--tmava);
+  color: var(--bila);
+}
+
+.band p {
+  color: #d5dcde;
+  margin: 0;
+}
+
+/* =========================================
+   6. TABULKY A FORMULÁŘE
+   ========================================= */
+.tool {
+  background-color: var(--bila);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin: 20px 0;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bila);
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--cara);
+}
+
+th {
+  background-color: var(--tmava);
+  color: var(--bila);
+}
+
+/* Zvýrazněný řádek z JavaScriptu */
+tr.hl td {
+  background-color: var(--zluta);
+  font-weight: 700;
+}
+
+.result {
+  font-family: "Archivo Black", Impact, sans-serif;
+  font-size: 28px;
+  margin: 15px 0 0 0;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin: 15px 0 5px 0;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  border: 2px solid var(--cara);
+  border-radius: 8px;
+  background-color: var(--pozadi);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--modra);
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--cervena);
+}
+
+.error {
+  color: var(--cervena);
+  font-size: 14px;
+  min-height: 20px;
+  margin: 4px 0 0 0;
+}
+
+.status {
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.status.ok {
+  color: var(--zelena);
+}
+
+/* =========================================
+   7. PATIČKA A MOBILNÍ ZOBRAZENÍ
+   ========================================= */
+.site-footer {
+  background-color: var(--tmava);
+  color: #cfd6d8;
+  padding: 30px 0;
+  font-size: 15px;
+  border-top: 4px solid var(--zluta);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  h1 { font-size: 32px; }
+  
+  .hero .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .wall {
+    height: 200px;
+    order: -1;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--tmava);
+    padding: 10px 20px 20px 20px;
+  }
+
+  .site-nav.open {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+  }
+
+  .btn.alt {
+    margin: 10px 0 0 0;
+  }
+}
+
+.wall {
+  height: 320px;
+  border: 6px solid var(--tmava);
+  border-radius: 16px;
+  position: relative;
+  /* Jednoduché barevné tečky (chyty) na šedém pozadí */
+  background:
+    radial-gradient(circle at 20% 20%, #e5483b 18px, transparent 19px),
+    radial-gradient(circle at 65% 25%, #ffc928 15px, transparent 16px),
+    radial-gradient(circle at 35% 45%, #2fa65a 16px, transparent 17px),
+    radial-gradient(circle at 75% 55%, #e5483b 14px, transparent 15px),
+    radial-gradient(circle at 28% 70%, #ffc928 18px, transparent 19px),
+    radial-gradient(circle at 68% 80%, #2fa65a 15px, transparent 16px),
+    #3a4448;
+}

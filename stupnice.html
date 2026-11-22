@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stupnice | BoulderZone</title>
+<meta name="description" content="Převodník bouldrových stupnic Fontainebleau a V-scale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span>Boulder</span>Zone</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Hlavní navigace">
+      <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="techniky.html">Techniky</a></li>
+        <li><a href="stupnice.html" aria-current="page">Stupnice</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap page-title">
+    <h1>Stupnice obtížnosti</h1>
+    <p>V Evropě se bouldery nejčastěji hodnotí stupnicí Fontainebleau (např. 6A), v USA stupnicí V (např. V3). Převod je jen orientační.</p>
+  </div>
+  <section>
+    <div class="wrap">
+      <div class="tool">
+        <h2>Převodník</h2>
+        <label for="font-grade">Fontainebleau</label>
+        <select id="font-grade"></select>
+        <p class="result" aria-live="polite">V-scale: <span id="v-grade">–</span></p>
+      </div>
+
+      <h2>Přehled</h2>
+      <div class="table-scroll">
+        <table id="grade-table">
+          <thead><tr><th>Fontainebleau</th><th>V-scale</th><th>Úroveň</th></tr></thead>
+          <tbody>
+            <tr data-font="4"><td>4</td><td>V0</td><td>Úplný začátečník</td></tr>
+            <tr data-font="5"><td>5</td><td>V1</td><td>Začátečník</td></tr>
+            <tr data-font="6A"><td>6A</td><td>V3</td><td>Pokročilý začátečník</td></tr>
+            <tr data-font="6B"><td>6B</td><td>V4</td><td>Střední úroveň</td></tr>
+            <tr data-font="6C"><td>6C</td><td>V5</td><td>Pokročilý</td></tr>
+            <tr data-font="7A"><td>7A</td><td>V6</td><td>Velmi pokročilý</td></tr>
+            <tr data-font="8A"><td>8A</td><td>V11</td><td>Elita</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap"><p>BoulderZone – školní projekt, VŠB-TUO, FEI.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
